@@ -9,21 +9,27 @@ export class InfoPaginaService {
 
   info: InfoPagina = {};
   cargada = false;
+  equipo: any[] = [];
 
   constructor( private http: HttpClient) {
+    this.cargarInfo();
+    this.cargarEquipo();  
+}
 
-    // console.log('Servicio de infoPagina listo');
-
+private cargarInfo(){
     // Leer JSON
     this.http.get('assets/data/data-pagina.json')
         .subscribe( (resp: InfoPagina) => {
-
           this.cargada = true;
           this.info = resp;
-          console.log( resp );  // toda la respuesta sale por consola
-
-
         });
+  }
 
+  private cargarEquipo() {
+    this.http.get('https://portafolio-angular-83d89-default-rtdb.firebaseio.com/equiepo.json')
+      .subscribe( (resp: any) => {
+          this.equipo = resp;
+          console.log( resp );  // toda la respuesta sale por consola
+        });
   }
 }
