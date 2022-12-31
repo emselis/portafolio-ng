@@ -1,0 +1,19 @@
+.centrar {
+   box-sizing: border-box;
+   margin: 0px;
+   padding: 0px;
+   /* margin: 0 auto; */
+  }
+
+.contenedor {
+   display: grid;
+    /* position: relative; */
+ }
+
+.loader {
+   margin: auto;
+   /* position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); */
+}

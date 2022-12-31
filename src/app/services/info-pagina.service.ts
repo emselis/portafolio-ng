@@ -29,7 +29,6 @@ private cargarInfo(){
     this.http.get('https://portafolio-angular-83d89-default-rtdb.firebaseio.com/equiepo.json')
       .subscribe( (resp: any) => {
           this.equipo = resp;
-          console.log( resp );  // toda la respuesta sale por consola
         });
   }
 }
